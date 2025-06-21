@@ -3,6 +3,7 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import LanguageSelector from './components/LanguageSelector';
 import PostalCodeInput from './components/PostalCodeInput';
 import FileUpload from './components/FileUpload';
+import AnalyzeButton from './components/AnalyzeButton';
 import InfoSection from './components/InfoSection';
 import { useLanguage } from './contexts/LanguageContext';
 
@@ -17,6 +18,25 @@ const AppContent: React.FC = () => {
 
   const handleFileSelect = (file: File) => {
     setUploadedFile(file);
+  };
+
+  const handleAnalyze = (recaptchaToken: string | null) => {
+    if (!recaptchaToken) {
+      console.error('No reCAPTCHA token received');
+      // Here you would show an error message to the user
+      return;
+    }
+
+    // Here you would send the data to your backend for analysis
+    console.log('Analyzing waste with:', {
+      postalCode,
+      fileName: uploadedFile?.name,
+      fileSize: uploadedFile?.size,
+      recaptchaToken: recaptchaToken.substring(0, 20) + '...'
+    });
+
+    // TODO: Implement actual API call to your backend
+    // The backend should verify the reCAPTCHA token before processing
   };
 
   return (
@@ -70,14 +90,12 @@ const AppContent: React.FC = () => {
               <FileUpload onFileSelect={handleFileSelect} />
             </div>
 
-            {/* Action Button */}
-            {postalCode && uploadedFile && (
-              <div className="text-center pt-6">
-                <button className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold py-4 px-8 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-lg">
-                  {t('analyzeButton')}
-                </button>
-              </div>
-            )}
+            {/* Analyze Button with reCAPTCHA */}
+            <AnalyzeButton 
+              postalCode={postalCode}
+              uploadedFile={uploadedFile}
+              onAnalyze={handleAnalyze}
+            />
           </div>
         </div>
       </main>

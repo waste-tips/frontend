@@ -62,14 +62,6 @@ const InfoSection: React.FC = () => {
             );
           })}
         </div>
-
-        <div className="text-center mt-12">
-          <div className="inline-block bg-gradient-to-r from-green-400 to-emerald-400 p-6 rounded-2xl text-white shadow-lg">
-            <p className="text-lg font-medium">
-              {t('togetherGreener')}
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

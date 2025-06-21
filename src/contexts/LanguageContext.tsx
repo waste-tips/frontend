@@ -107,7 +107,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Reduzierung der Deponiemenge und CO2-Emissionen",
     reason3: "Einhaltung der deutschen Umweltgesetze",
     reason4: "Kosteneinsparungen bei der Müllentsorgung",
-    togetherGreener: "🌱 Gemeinsam machen wir Deutschland grüner! 🌱",
     languageSelector: "Sprache wählen"
   },
   en: {
@@ -127,7 +126,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Reduction of landfill waste and CO2 emissions",
     reason3: "Compliance with German environmental laws",
     reason4: "Cost savings in waste disposal",
-    togetherGreener: "🌱 Together we can make Germany greener! 🌱",
     languageSelector: "Select Language"
   },
   tr: {
@@ -147,7 +145,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Depolama alanı atığının ve CO2 emisyonlarının azaltılması",
     reason3: "Alman çevre yasalarına uyum",
     reason4: "Atık bertarafında maliyet tasarrufu",
-    togetherGreener: "🌱 Birlikte Almanya'yı daha yeşil yapabiliriz! 🌱",
     languageSelector: "Dil Seç"
   },
   ru: {
@@ -167,7 +164,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Сокращение количества свалок и выбросов CO2",
     reason3: "Соблюдение немецкого экологического законодательства",
     reason4: "Экономия средств на утилизации отходов",
-    togetherGreener: "🌱 Вместе мы можем сделать Германию зеленее! 🌱",
     languageSelector: "Выбрать язык"
   },
   pl: {
@@ -187,7 +183,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Redukcja odpadów składowiskowych i emisji CO2",
     reason3: "Zgodność z niemieckimi prawami środowiskowymi",
     reason4: "Oszczędności kosztów w utylizacji odpadów",
-    togetherGreener: "🌱 Razem możemy uczynić Niemcy bardziej zielonymi! 🌱",
     languageSelector: "Wybierz język"
   },
   ar: {
@@ -207,7 +202,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "تقليل نفايات المكبات وانبعاثات ثاني أكسيد الكربون",
     reason3: "الامتثال لقوانين البيئة الألمانية",
     reason4: "توفير التكاليف في التخلص من النفايات",
-    togetherGreener: "🌱 معاً يمكننا جعل ألمانيا أكثر خضرة! 🌱",
     languageSelector: "اختر اللغة"
   },
   ku: {
@@ -227,7 +221,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Kêmkirina zibilên çalê û belavbûna CO2",
     reason3: "Lêpirsîna yasayên jîngehê yên Almanyayê",
     reason4: "Xilasbûna pere di avêtina zibilê de",
-    togetherGreener: "🌱 Bi hev re em dikarin Almanyayê zêdetir kesk bikin! 🌱",
     languageSelector: "Ziman Hilbijêre"
   },
   it: {
@@ -247,7 +240,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Riduzione dei rifiuti in discarica e delle emissioni di CO2",
     reason3: "Conformità alle leggi ambientali tedesche",
     reason4: "Risparmio sui costi di smaltimento rifiuti",
-    togetherGreener: "🌱 Insieme possiamo rendere la Germania più verde! 🌱",
     languageSelector: "Seleziona Lingua"
   },
   bs: {
@@ -267,7 +259,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Smanjenje otpada na deponijama i CO2 emisija",
     reason3: "Pridržavanje njemačkih zakona o okolišu",
     reason4: "Uštede troškova u zbrinjavanju otpada",
-    togetherGreener: "🌱 Zajedno možemo učiniti Njemačku zelenijom! 🌱",
     languageSelector: "Odaberite Jezik"
   },
   hr: {
@@ -287,7 +278,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Smanjenje otpada na odlagalištima i CO2 emisija",
     reason3: "Pridržavanje njemačkih zakona o okolišu",
     reason4: "Uštede troškova u zbrinjavanju otpada",
-    togetherGreener: "🌱 Zajedno možemo učiniti Njemačku zelenijom! 🌱",
     languageSelector: "Odaberite Jezik"
   },
   sr: {
@@ -307,7 +297,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Смањење отпада на депонијама и CO2 емисија",
     reason3: "Придржавање немачких закона о животној средини",
     reason4: "Уштеде трошкова у збрињавању отпада",
-    togetherGreener: "🌱 Заједно можемо учинити Немачку зеленијом! 🌱",
     languageSelector: "Одаберите Језик"
   },
   ro: {
@@ -327,7 +316,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Reducerea deșeurilor de la groapa de gunoi și emisiilor de CO2",
     reason3: "Respectarea legilor de mediu germane",
     reason4: "Economii de costuri în eliminarea deșeurilor",
-    togetherGreener: "🌱 Împreună putem face Germania mai verde! 🌱",
     languageSelector: "Selectați Limba"
   },
   el: {
@@ -347,7 +335,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Μείωση απορριμμάτων ΧΥΤΑ και εκπομπών CO2",
     reason3: "Συμμόρφωση με τους γερμανικούς περιβαλλοντικούς νόμους",
     reason4: "Εξοικονόμηση κόστους στη διάθεση απορριμμάτων",
-    togetherGreener: "🌱 Μαζί μπορούμε να κάνουμε τη Γερμανία πιο πράσινη! 🌱",
     languageSelector: "Επιλέξτε Γλώσσα"
   },
   es: {
@@ -367,7 +354,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Reducción de residuos de vertedero y emisiones de CO2",
     reason3: "Cumplimiento de las leyes ambientales alemanas",
     reason4: "Ahorro de costos en la eliminación de residuos",
-    togetherGreener: "🌱 ¡Juntos podemos hacer Alemania más verde! 🌱",
     languageSelector: "Seleccionar Idioma"
   },
   fr: {
@@ -387,7 +373,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Réduction des déchets d'enfouissement et des émissions de CO2",
     reason3: "Conformité aux lois environnementales allemandes",
     reason4: "Économies de coûts dans l'élimination des déchets",
-    togetherGreener: "🌱 Ensemble, nous pouvons rendre l'Allemagne plus verte! 🌱",
     languageSelector: "Sélectionner la Langue"
   },
   hi: {
@@ -407,7 +392,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "लैंडफिल कचरे और CO2 उत्सर्जन में कमी",
     reason3: "जर्मन पर्यावरण कानूनों का अनुपालन",
     reason4: "कचरा निपटान में लागत बचत",
-    togetherGreener: "🌱 मिलकर हम जर्मनी को हरा-भरा बना सकते हैं! 🌱",
     languageSelector: "भाषा का चयन करें"
   },
   ur: {
@@ -427,7 +411,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "لینڈ فل کچرے اور CO2 اخراج میں کمی",
     reason3: "جرمن ماحولیاتی قوانین کی تعمیل",
     reason4: "کچرا ٹھکانے لگانے میں لاگت کی بچت",
-    togetherGreener: "🌱 مل کر ہم جرمنی کو زیادہ سبز بنا سکتے ہیں! 🌱",
     languageSelector: "زبان منتخب کریں"
   },
   vi: {
@@ -447,7 +430,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Giảm rác thải bãi rác và phát thải CO2",
     reason3: "Tuân thủ luật môi trường của Đức",
     reason4: "Tiết kiệm chi phí trong việc xử lý rác thải",
-    togetherGreener: "🌱 Cùng nhau chúng ta có thể làm cho Đức xanh hơn! 🌱",
     languageSelector: "Chọn Ngôn Ngữ"
   },
   zh: {
@@ -467,7 +449,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "减少垃圾填埋场废物和二氧化碳排放",
     reason3: "遵守德国环境法律",
     reason4: "节省废物处理成本",
-    togetherGreener: "🌱 我们一起可以让德国更绿色！ 🌱",
     languageSelector: "选择语言"
   },
   fa: {
@@ -487,7 +468,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "کاهش زباله‌های دفن و انتشار CO2",
     reason3: "رعایت قوانین زیست‌محیطی آلمان",
     reason4: "صرفه‌جویی در هزینه‌های دفع زباله",
-    togetherGreener: "🌱 با هم می‌توانیم آلمان را سبزتر کنیم! 🌱",
     languageSelector: "انتخاب زبان"
   },
   ps: {
@@ -507,7 +487,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "د ځمکې د ډکولو کثافاتو او د CO2 د خپرولو کمول",
     reason3: "د آلمان د چاپیریال د قوانینو تعقیبول",
     reason4: "د کثافاتو د لرې کولو په لګښتونو کې سپمول",
-    togetherGreener: "🌱 موږ ټول یوځای کولی شو آلمان ډیر شین کړو! 🌱",
     languageSelector: "ژبه وټاکئ"
   },
   ta: {
@@ -527,7 +506,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "நிலப்பரப்பு குப்பை மற்றும் CO2 உமிழ்வுகளை குறைத்தல்",
     reason3: "ஜெர்மன் சுற்றுச்சூழல் சட்டங்களுக்கு இணக்கம்",
     reason4: "குப்பை அகற்றலில் செலவு சேமிப்பு",
-    togetherGreener: "🌱 ஒன்றாக நாம் ஜெர்மனியை மேலும் பசுமையாக்க முடியும்! 🌱",
     languageSelector: "மொழியைத் தேர்ந்தெடுக்கவும்"
   },
   sq: {
@@ -547,7 +525,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Reduktimi i mbeturinave të groposjes dhe emetimeve të CO2",
     reason3: "Përputhja me ligjet mjedisore gjermane",
     reason4: "Kursimi i kostove në heqjen e mbeturinave",
-    togetherGreener: "🌱 Së bashku mund ta bëjmë Gjermaninë më të gjelbër! 🌱",
     languageSelector: "Zgjidh Gjuhën"
   },
   da: {
@@ -567,7 +544,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Reduktion af lossepladsaffald og CO2-udledning",
     reason3: "Overholdelse af tyske miljølove",
     reason4: "Omkostningsbesparelser ved affaldsbortskaffelse",
-    togetherGreener: "🌱 Sammen kan vi gøre Tyskland grønnere! 🌱",
     languageSelector: "Vælg Sprog"
   },
   uk: {
@@ -587,7 +563,6 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Зменшення кількості сміттєзвалищ та викидів CO2",
     reason3: "Дотримання німецького екологічного законодавства",
     reason4: "Економія коштів на утилізації відходів",
-    togetherGreener: "🌱 Разом ми можемо зробити Німеччину зеленішою! 🌱",
     languageSelector: "Оберіть Мову"
   }
 };
