@@ -22,7 +22,7 @@ const AppContent: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-25 to-teal-50">
       {/* Header */}
-      <header className="relative overflow-hidden pb-20">
+      <header className="relative pb-20">
         <div className="absolute inset-0 bg-gradient-to-r from-green-400/10 to-emerald-400/10"></div>
         <div className="relative max-w-6xl mx-auto px-6 py-8">
           <div className="flex justify-between items-start mb-8">
@@ -42,7 +42,7 @@ const AppContent: React.FC = () => {
             <LanguageSelector />
           </div>
 
-          <div className="text-center mb-12">
+          <div className="text-center">
             <p className="text-xl text-green-700 leading-relaxed max-w-3xl mx-auto">
               {t('description')}
             </p>
