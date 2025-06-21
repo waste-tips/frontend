@@ -27,7 +27,7 @@ const AppContent: React.FC = () => {
         <div className="relative max-w-6xl mx-auto px-6 py-8">
           <div className="flex justify-between items-start mb-8">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center shadow-lg" style={{ minWidth: '3rem', minHeight: '3rem' }}>
                 <span className="text-2xl">♻️</span>
               </div>
               <div>
