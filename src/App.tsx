@@ -57,7 +57,7 @@ const AppContent: React.FC = () => {
             {/* Postal Code Input */}
             <div>
               <label className="block text-lg font-semibold text-green-800 mb-4">
-                📍 Postal Code
+                {t('postalCodeLabel')}
               </label>
               <PostalCodeInput onPostalCodeChange={handlePostalCodeChange} />
             </div>
@@ -65,7 +65,7 @@ const AppContent: React.FC = () => {
             {/* File Upload */}
             <div>
               <label className="block text-lg font-semibold text-green-800 mb-4">
-                📸 Upload Photo
+                {t('uploadPhotoLabel')}
               </label>
               <FileUpload onFileSelect={handleFileSelect} />
             </div>
@@ -74,7 +74,7 @@ const AppContent: React.FC = () => {
             {postalCode && uploadedFile && (
               <div className="text-center pt-6">
                 <button className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold py-4 px-8 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-lg">
-                  🔍 Analyze My Waste
+                  {t('analyzeButton')}
                 </button>
               </div>
             )}

@@ -66,7 +66,7 @@ const InfoSection: React.FC = () => {
         <div className="text-center mt-12">
           <div className="inline-block bg-gradient-to-r from-green-400 to-emerald-400 p-6 rounded-2xl text-white shadow-lg">
             <p className="text-lg font-medium">
-              🌱 Together we can make Germany greener! 🌱
+              {t('togetherGreener')}
             </p>
           </div>
         </div>

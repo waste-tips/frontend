@@ -62,14 +62,14 @@ const PostalCodeInput: React.FC<PostalCodeInputProps> = ({ onPostalCodeChange })
       {!isValid && postalCode.length === 5 && (
         <div className="mt-2 text-sm text-red-600 flex items-center gap-1">
           <span>⚠️</span>
-          <span>Please enter a valid 5-digit German postal code</span>
+          <span>{t('invalidPostalCode')}</span>
         </div>
       )}
       
       {isValid && postalCode.length === 5 && (
         <div className="mt-2 text-sm text-green-600 flex items-center gap-1">
           <span>✓</span>
-          <span>Valid postal code</span>
+          <span>{t('validPostalCode')}</span>
         </div>
       )}
     </div>
