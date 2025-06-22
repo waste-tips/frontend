@@ -14,29 +14,9 @@ A smart waste sorting assistant for Germany that helps users properly dispose of
 
 The app includes automatic location detection using:
 - Browser Geolocation API
-- Google Geocoding API for postal code determination
+- Backend geocoding service for postal code determination
 
-### Setup Google Geocoding API
-
-1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a new project or select existing one
-3. Enable "Geocoding API"
-4. Create API credentials:
-   - Go to "Credentials" → "Create Credentials" → "API key"
-   - **Important**: Set "Application restrictions" to "None" (not HTTP referrers)
-   - Set "API restrictions" to only "Geocoding API"
-5. Add your API key to `.env`:
-   ```
-   VITE_GOOGLE_GEOCODING_API_KEY=your_api_key_here
-   ```
-
-### API Key Restrictions
-
-**Important**: The Geocoding API requires an unrestricted API key (no HTTP referrer restrictions). This is a Google API limitation. For production use, consider:
-
-1. **Server proxy**: Create a backend endpoint that calls Google API with a server-side key
-2. **IP restrictions**: Use IP address restrictions instead of referrer restrictions
-3. **Usage quotas**: Set daily/monthly usage limits in Google Cloud Console
+All API calls are handled securely through backend services, eliminating the need for client-side API keys.
 
 ## Development
 
@@ -56,11 +36,7 @@ firebase deploy
 
 ## Environment Variables
 
-Create a `.env` file with:
-
-```
-VITE_GOOGLE_GEOCODING_API_KEY=your_google_geocoding_api_key_here
-```
+No environment variables are required for basic functionality. All external API calls are handled through secure backend endpoints.
 
 ## Languages Supported
 
@@ -78,4 +54,13 @@ VITE_GOOGLE_GEOCODING_API_KEY=your_google_geocoding_api_key_here
 
 - reCAPTCHA Enterprise protection
 - Input validation
-- Secure API communication
+- Secure API communication through backend services
+- No client-side API keys required
+
+## Backend Services
+
+The application uses secure backend endpoints for:
+- **Location Detection**: `POST https://backend-geo-7lnemd56tq-ey.a.run.app`
+- **Waste Analysis**: `POST https://backend-service-7lnemd56tq-ey.a.run.app`
+
+Both endpoints require reCAPTCHA verification for security.

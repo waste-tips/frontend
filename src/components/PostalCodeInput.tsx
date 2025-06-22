@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { MapPin, Target, Loader2 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useRecaptcha } from '../hooks/useRecaptcha';
 
 interface PostalCodeInputProps {
   onPostalCodeChange: (code: string) => void;
 }
 
 const PostalCodeInput: React.FC<PostalCodeInputProps> = ({ onPostalCodeChange }) => {
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
+  const { executeRecaptcha } = useRecaptcha();
   const [postalCode, setPostalCode] = useState('');
   const [isValid, setIsValid] = useState(true);
   const [isDetecting, setIsDetecting] = useState(false);
@@ -43,6 +45,7 @@ const PostalCodeInput: React.FC<PostalCodeInputProps> = ({ onPostalCodeChange })
     setIsDetecting(true);
 
     try {
+      // Get user's location
       const position = await new Promise<GeolocationPosition>((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(resolve, reject, {
           enableHighAccuracy: true,
@@ -53,76 +56,49 @@ const PostalCodeInput: React.FC<PostalCodeInputProps> = ({ onPostalCodeChange })
 
       const { latitude, longitude } = position.coords;
       
-      // Option 1: Direct API call (requires unrestricted API key)
-      const directApiCall = async () => {
-        const response = await fetch(
-          `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${import.meta.env.VITE_GOOGLE_GEOCODING_API_KEY}&language=de&region=de`
-        );
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        return response.json();
-      };
-
-      // Option 2: Server proxy call (more secure, requires backend endpoint)
-      const proxyApiCall = async () => {
-        const response = await fetch('/api/geocode', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ latitude, longitude })
-        });
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        return response.json();
-      };
-
-      // Try direct API call first, fallback to proxy if available
-      let data;
-      try {
-        data = await directApiCall();
-      } catch (error) {
-        console.warn('Direct API call failed, trying proxy...', error);
-        try {
-          data = await proxyApiCall();
-        } catch (proxyError) {
-          console.error('Proxy API call also failed:', proxyError);
-          throw new Error('Both direct and proxy API calls failed');
-        }
+      // Get reCAPTCHA token
+      const recaptchaToken = await executeRecaptcha('detect_location');
+      
+      if (!recaptchaToken) {
+        throw new Error('Failed to get reCAPTCHA token');
       }
 
-      if (data.status === 'OK' && data.results.length > 0) {
-        // Find postal code in address components
-        for (const result of data.results) {
-          const postalCodeComponent = result.address_components.find(
-            (component: any) => component.types.includes('postal_code')
-          );
+      // Call your backend endpoint
+      const response = await fetch('https://backend-geo-7lnemd56tq-ey.a.run.app', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          language: currentLanguage,
+          lat: latitude.toString(),
+          lng: longitude.toString(),
+          captcha: recaptchaToken
+        })
+      });
 
-          if (postalCodeComponent) {
-            const detectedCode = postalCodeComponent.long_name;
-            if (validateGermanPostalCode(detectedCode)) {
-              setPostalCode(detectedCode);
-              setIsValid(true);
-              onPostalCodeChange(detectedCode);
-              return;
-            }
-          }
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      if (data.success && data.postal_code) {
+        const detectedCode = data.postal_code;
+        if (validateGermanPostalCode(detectedCode)) {
+          setPostalCode(detectedCode);
+          setIsValid(true);
+          onPostalCodeChange(detectedCode);
+        } else {
+          alert(t('noGermanPostalCodeFound'));
         }
-        
-        // If no valid German postal code found
-        alert(t('noGermanPostalCodeFound'));
       } else {
-        throw new Error(`Geocoding API error: ${data.status}`);
+        throw new Error(data.error || 'Unknown error occurred');
       }
 
     } catch (error) {
       console.error('Location detection error:', error);
+      
       if (error instanceof GeolocationPositionError) {
         switch (error.code) {
           case error.PERMISSION_DENIED:
@@ -139,12 +115,12 @@ const PostalCodeInput: React.FC<PostalCodeInputProps> = ({ onPostalCodeChange })
             break;
         }
       } else {
-        // More specific error handling
+        // Handle backend API errors
         const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-        if (errorMessage.includes('referer restrictions')) {
-          alert(t('apiKeyRestrictionError'));
+        if (errorMessage.includes('reCAPTCHA')) {
+          alert(t('recaptchaError') || 'reCAPTCHA verification failed. Please try again.');
         } else {
-          alert(t('geocodingError'));
+          alert(t('geocodingError') || 'Failed to detect location. Please try again.');
         }
       }
     } finally {
