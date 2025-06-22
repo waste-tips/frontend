@@ -100,6 +100,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "Foto hochladen",
     uploadPhotoDescription: "Klicken Sie hier oder ziehen Sie ein Foto Ihres Mülls hierher",
     analyzeButton: "🔍 Meinen Müll analysieren",
+    analyzing: "Analysiere...",
     validPostalCode: "Gültige Postleitzahl",
     invalidPostalCode: "⚠️ Bitte geben Sie eine gültige 5-stellige deutsche Postleitzahl ein",
     whyImportant: "Warum ist richtige Mülltrennung wichtig?",
@@ -107,7 +108,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Reduzierung der Deponiemenge und CO2-Emissionen",
     reason3: "Einhaltung der deutschen Umweltgesetze",
     reason4: "Kosteneinsparungen bei der Müllentsorgung",
-    languageSelector: "Sprache wählen"
+    languageSelector: "Sprache wählen",
+    analysisComplete: "Analyse abgeschlossen",
+    analysisCompleteDescription: "Hier sind Ihre Sortieranweisungen",
+    analysisError: "Analyse fehlgeschlagen",
+    analysisErrorDescription: "Es ist ein Fehler aufgetreten",
+    newAnalysis: "Neue Analyse starten",
+    genericError: "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
   },
   en: {
     title: "Waste Sorting Helper",
@@ -119,6 +126,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "Upload Photo",
     uploadPhotoDescription: "Click here or drag a photo of your waste here",
     analyzeButton: "🔍 Analyze My Waste",
+    analyzing: "Analyzing...",
     validPostalCode: "Valid postal code",
     invalidPostalCode: "⚠️ Please enter a valid 5-digit German postal code",
     whyImportant: "Why is proper waste sorting important?",
@@ -126,7 +134,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Reduction of landfill waste and CO2 emissions",
     reason3: "Compliance with German environmental laws",
     reason4: "Cost savings in waste disposal",
-    languageSelector: "Select Language"
+    languageSelector: "Select Language",
+    analysisComplete: "Analysis Complete",
+    analysisCompleteDescription: "Here are your sorting instructions",
+    analysisError: "Analysis Failed",
+    analysisErrorDescription: "An error occurred during analysis",
+    newAnalysis: "Start New Analysis",
+    genericError: "An unexpected error occurred. Please try again."
   },
   tr: {
     title: "Atık Ayırma Yardımcısı",
@@ -138,6 +152,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "Fotoğraf Yükle",
     uploadPhotoDescription: "Buraya tıklayın veya atığınızın fotoğrafını buraya sürükleyin",
     analyzeButton: "🔍 Atığımı Analiz Et",
+    analyzing: "Analiz ediliyor...",
     validPostalCode: "Geçerli posta kodu",
     invalidPostalCode: "⚠️ Lütfen geçerli 5 haneli Alman posta kodu girin",
     whyImportant: "Doğru atık ayırma neden önemli?",
@@ -145,7 +160,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Depolama alanı atığının ve CO2 emisyonlarının azaltılması",
     reason3: "Alman çevre yasalarına uyum",
     reason4: "Atık bertarafında maliyet tasarrufu",
-    languageSelector: "Dil Seç"
+    languageSelector: "Dil Seç",
+    analysisComplete: "Analiz Tamamlandı",
+    analysisCompleteDescription: "İşte ayırma talimatlarınız",
+    analysisError: "Analiz Başarısız",
+    analysisErrorDescription: "Analiz sırasında bir hata oluştu",
+    newAnalysis: "Yeni Analiz Başlat",
+    genericError: "Beklenmeyen bir hata oluştu. Lütfen tekrar deneyin."
   },
   ru: {
     title: "Помощник по сортировке мусора",
@@ -157,6 +178,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "Загрузить фото",
     uploadPhotoDescription: "Нажмите здесь или перетащите фото вашего мусора сюда",
     analyzeButton: "🔍 Анализировать мой мусор",
+    analyzing: "Анализируем...",
     validPostalCode: "Действительный почтовый индекс",
     invalidPostalCode: "⚠️ Пожалуйста, введите действительный 5-значный немецкий почтовый индекс",
     whyImportant: "Почему важна правильная сортировка мусора?",
@@ -164,7 +186,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Сокращение количества свалок и выбросов CO2",
     reason3: "Соблюдение немецкого экологического законодательства",
     reason4: "Экономия средств на утилизации отходов",
-    languageSelector: "Выбрать язык"
+    languageSelector: "Выбрать язык",
+    analysisComplete: "Анализ завершен",
+    analysisCompleteDescription: "Вот ваши инструкции по сортировке",
+    analysisError: "Ошибка анализа",
+    analysisErrorDescription: "Произошла ошибка во время анализа",
+    newAnalysis: "Начать новый анализ",
+    genericError: "Произошла неожиданная ошибка. Пожалуйста, попробуйте снова."
   },
   pl: {
     title: "Asystent Sortowania Odpadów",
@@ -176,6 +204,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "Prześlij zdjęcie",
     uploadPhotoDescription: "Kliknij tutaj lub przeciągnij zdjęcie swoich odpadów tutaj",
     analyzeButton: "🔍 Analizuj moje odpady",
+    analyzing: "Analizowanie...",
     validPostalCode: "Prawidłowy kod pocztowy",
     invalidPostalCode: "⚠️ Proszę wprowadzić prawidłowy 5-cyfrowy niemiecki kod pocztowy",
     whyImportant: "Dlaczego prawidłowa segregacja odpadów jest ważna?",
@@ -183,7 +212,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Redukcja odpadów składowiskowych i emisji CO2",
     reason3: "Zgodność z niemieckimi prawami środowiskowymi",
     reason4: "Oszczędności kosztów w utylizacji odpadów",
-    languageSelector: "Wybierz język"
+    languageSelector: "Wybierz język",
+    analysisComplete: "Analiza Zakończona",
+    analysisCompleteDescription: "Oto Twoje instrukcje sortowania",
+    analysisError: "Błąd Analizy",
+    analysisErrorDescription: "Wystąpił błąd podczas analizy",
+    newAnalysis: "Rozpocznij Nową Analizę",
+    genericError: "Wystąpił nieoczekiwany błąd. Spróbuj ponownie."
   },
   ar: {
     title: "مساعد فرز النفايات",
@@ -195,6 +230,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "رفع صورة",
     uploadPhotoDescription: "انقر هنا أو اسحب صورة نفاياتك هنا",
     analyzeButton: "🔍 تحليل نفاياتي",
+    analyzing: "جاري التحليل...",
     validPostalCode: "رمز بريدي صحيح",
     invalidPostalCode: "⚠️ يرجى إدخال رمز بريدي ألماني صحيح مكون من 5 أرقام",
     whyImportant: "لماذا فرز النفايات الصحيح مهم؟",
@@ -202,7 +238,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "تقليل نفايات المكبات وانبعاثات ثاني أكسيد الكربون",
     reason3: "الامتثال لقوانين البيئة الألمانية",
     reason4: "توفير التكاليف في التخلص من النفايات",
-    languageSelector: "اختر اللغة"
+    languageSelector: "اختر اللغة",
+    analysisComplete: "اكتمل التحليل",
+    analysisCompleteDescription: "إليك تعليمات الفرز",
+    analysisError: "فشل التحليل",
+    analysisErrorDescription: "حدث خطأ أثناء التحليل",
+    newAnalysis: "بدء تحليل جديد",
+    genericError: "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى."
   },
   ku: {
     title: "Alîkarê Veqetandina Zibilê",
@@ -214,6 +256,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "Wêne Bar Bike",
     uploadPhotoDescription: "Li vir bitikîne an wêneyê zibilê xwe li vir bikişîne",
     analyzeButton: "🔍 Zibilê Min Analîz Bike",
+    analyzing: "Analîz dike...",
     validPostalCode: "Koda postê ya derbasdar",
     invalidPostalCode: "⚠️ Ji kerema xwe koda postê ya Almanyayê ya 5 hejmarî ya derbasdar binivîse",
     whyImportant: "Çima veqetandina rast a zibilê girîng e?",
@@ -221,7 +264,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Kêmkirina zibilên çalê û belavbûna CO2",
     reason3: "Lêpirsîna yasayên jîngehê yên Almanyayê",
     reason4: "Xilasbûna pere di avêtina zibilê de",
-    languageSelector: "Ziman Hilbijêre"
+    languageSelector: "Ziman Hilbijêre",
+    analysisComplete: "Analîz Temam Bû",
+    analysisCompleteDescription: "Li vir rêberiyên veqetandinê ne",
+    analysisError: "Analîz Têk Çû",
+    analysisErrorDescription: "Di dema analîzê de xeletî çêbû",
+    newAnalysis: "Analîzek Nû Dest Pê Bike",
+    genericError: "Xeletîyek nenas çêbû. Ji kerema xwe dîsa biceribîne."
   },
   it: {
     title: "Assistente per la Raccolta Differenziata",
@@ -233,6 +282,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "Carica Foto",
     uploadPhotoDescription: "Clicca qui o trascina una foto dei tuoi rifiuti qui",
     analyzeButton: "🔍 Analizza i Miei Rifiuti",
+    analyzing: "Analizzando...",
     validPostalCode: "Codice postale valido",
     invalidPostalCode: "⚠️ Inserisci un codice postale tedesco valido di 5 cifre",
     whyImportant: "Perché la corretta raccolta differenziata è importante?",
@@ -240,7 +290,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Riduzione dei rifiuti in discarica e delle emissioni di CO2",
     reason3: "Conformità alle leggi ambientali tedesche",
     reason4: "Risparmio sui costi di smaltimento rifiuti",
-    languageSelector: "Seleziona Lingua"
+    languageSelector: "Seleziona Lingua",
+    analysisComplete: "Analisi Completata",
+    analysisCompleteDescription: "Ecco le tue istruzioni per lo smaltimento",
+    analysisError: "Analisi Fallita",
+    analysisErrorDescription: "Si è verificato un errore durante l'analisi",
+    newAnalysis: "Inizia Nuova Analisi",
+    genericError: "Si è verificato un errore imprevisto. Riprova."
   },
   bs: {
     title: "Asistent za Sortiranje Otpada",
@@ -252,6 +308,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "Učitaj Fotografiju",
     uploadPhotoDescription: "Kliknite ovdje ili povucite fotografiju svog otpada ovdje",
     analyzeButton: "🔍 Analiziraj Moj Otpad",
+    analyzing: "Analiziranje...",
     validPostalCode: "Važeći poštanski broj",
     invalidPostalCode: "⚠️ Molimo unesite važeći 5-cifreni njemački poštanski broj",
     whyImportant: "Zašto je pravilno sortiranje otpada važno?",
@@ -259,7 +316,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Smanjenje otpada na deponijama i CO2 emisija",
     reason3: "Pridržavanje njemačkih zakona o okolišu",
     reason4: "Uštede troškova u zbrinjavanju otpada",
-    languageSelector: "Odaberite Jezik"
+    languageSelector: "Odaberite Jezik",
+    analysisComplete: "Analiza Završena",
+    analysisCompleteDescription: "Evo vaših instrukcija za sortiranje",
+    analysisError: "Analiza Neuspješna",
+    analysisErrorDescription: "Došlo je do greške tokom analize",
+    newAnalysis: "Počni Novu Analizu",
+    genericError: "Došlo je do neočekivane greške. Molimo pokušajte ponovo."
   },
   hr: {
     title: "Asistent za Sortiranje Otpada",
@@ -271,6 +334,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "Učitaj Fotografiju",
     uploadPhotoDescription: "Kliknite ovdje ili povucite fotografiju svog otpada ovdje",
     analyzeButton: "🔍 Analiziraj Moj Otpad",
+    analyzing: "Analiziranje...",
     validPostalCode: "Važeći poštanski broj",
     invalidPostalCode: "⚠️ Molimo unesite važeći 5-znamenkasti njemački poštanski broj",
     whyImportant: "Zašto je pravilno sortiranje otpada važno?",
@@ -278,7 +342,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Smanjenje otpada na odlagalištima i CO2 emisija",
     reason3: "Pridržavanje njemačkih zakona o okolišu",
     reason4: "Uštede troškova u zbrinjavanju otpada",
-    languageSelector: "Odaberite Jezik"
+    languageSelector: "Odaberite Jezik",
+    analysisComplete: "Analiza Završena",
+    analysisCompleteDescription: "Evo vaših instrukcija za sortiranje",
+    analysisError: "Analiza Neuspješna",
+    analysisErrorDescription: "Došlo je do greške tijekom analize",
+    newAnalysis: "Počni Novu Analizu",
+    genericError: "Došlo je do neočekivane greške. Molimo pokušajte ponovo."
   },
   sr: {
     title: "Асистент за Сортирање Отпада",
@@ -290,6 +360,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "Учитај Фотографију",
     uploadPhotoDescription: "Кликните овде или повуците фотографију свог отпада овде",
     analyzeButton: "🔍 Анализирај Мој Отпад",
+    analyzing: "Анализирање...",
     validPostalCode: "Важећи поштански број",
     invalidPostalCode: "⚠️ Молимо унесите важећи 5-цифрени немачки поштански број",
     whyImportant: "Зашто је правилно сортирање отпада важно?",
@@ -297,7 +368,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Смањење отпада на депонијама и CO2 емисија",
     reason3: "Придржавање немачких закона о животној средини",
     reason4: "Уштеде трошкова у збрињавању отпада",
-    languageSelector: "Одаберите Језик"
+    languageSelector: "Одаберите Језик",
+    analysisComplete: "Анализа Завршена",
+    analysisCompleteDescription: "Ево ваших инструкција за сортирање",
+    analysisError: "Анализа Неуспешна",
+    analysisErrorDescription: "Дошло је до грешке током анализе",
+    newAnalysis: "Почни Нову Анализу",
+    genericError: "Дошло је до неочекиване грешке. Молимо покушајте поново."
   },
   ro: {
     title: "Asistent pentru Sortarea Deșeurilor",
@@ -309,6 +386,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "Încărcați Fotografia",
     uploadPhotoDescription: "Faceți clic aici sau trageți o fotografie a deșeurilor aici",
     analyzeButton: "🔍 Analizați Deșeurile Mele",
+    analyzing: "Analizare...",
     validPostalCode: "Cod poștal valid",
     invalidPostalCode: "⚠️ Vă rugăm să introduceți un cod poștal german valid de 5 cifre",
     whyImportant: "De ce este importantă sortarea corectă a deșeurilor?",
@@ -316,7 +394,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Reducerea deșeurilor de la groapa de gunoi și emisiilor de CO2",
     reason3: "Respectarea legilor de mediu germane",
     reason4: "Economii de costuri în eliminarea deșeurilor",
-    languageSelector: "Selectați Limba"
+    languageSelector: "Selectați Limba",
+    analysisComplete: "Analiza Completă",
+    analysisCompleteDescription: "Iată instrucțiunile de sortare",
+    analysisError: "Analiza Eșuată",
+    analysisErrorDescription: "A apărut o eroare în timpul analizei",
+    newAnalysis: "Începeți Analiza Nouă",
+    genericError: "A apărut o eroare neașteptată. Vă rugăm să încercați din nou."
   },
   el: {
     title: "Βοηθός Διαχωρισμού Απορριμμάτων",
@@ -328,6 +412,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "Ανέβασμα Φωτογραφίας",
     uploadPhotoDescription: "Κάντε κλικ εδώ ή σύρετε μια φωτογραφία των απορριμμάτων σας εδώ",
     analyzeButton: "🔍 Αναλύστε τα Απορρίμματά μου",
+    analyzing: "Ανάλυση...",
     validPostalCode: "Έγκυρος ταχυδρομικός κώδικας",
     invalidPostalCode: "⚠️ Παρακαλώ εισάγετε έναν έγκυρο 5ψήφιο γερμανικό ταχυδρομικό κώδικα",
     whyImportant: "Γιατί είναι σημαντικός ο σωστός διαχωρισμός απορριμμάτων;",
@@ -335,7 +420,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Μείωση απορριμμάτων ΧΥΤΑ και εκπομπών CO2",
     reason3: "Συμμόρφωση με τους γερμανικούς περιβαλλοντικούς νόμους",
     reason4: "Εξοικονόμηση κόστους στη διάθεση απορριμμάτων",
-    languageSelector: "Επιλέξτε Γλώσσα"
+    languageSelector: "Επιλέξτε Γλώσσα",
+    analysisComplete: "Ανάλυση Ολοκληρώθηκε",
+    analysisCompleteDescription: "Εδώ είναι οι οδηγίες διαχωρισμού σας",
+    analysisError: "Η Ανάλυση Απέτυχε",
+    analysisErrorDescription: "Προέκυψε σφάλμα κατά την ανάλυση",
+    newAnalysis: "Ξεκινήστε Νέα Ανάλυση",
+    genericError: "Προέκυψε απροσδόκητο σφάλμα. Παρακαλώ δοκιμάστε ξανά."
   },
   es: {
     title: "Asistente de Clasificación de Residuos",
@@ -347,6 +438,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "Subir Foto",
     uploadPhotoDescription: "Haga clic aquí o arrastre una foto de sus residuos aquí",
     analyzeButton: "🔍 Analizar Mis Residuos",
+    analyzing: "Analizando...",
     validPostalCode: "Código postal válido",
     invalidPostalCode: "⚠️ Por favor ingrese un código postal alemán válido de 5 dígitos",
     whyImportant: "¿Por qué es importante la clasificación correcta de residuos?",
@@ -354,7 +446,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Reducción de residuos de vertedero y emisiones de CO2",
     reason3: "Cumplimiento de las leyes ambientales alemanas",
     reason4: "Ahorro de costos en la eliminación de residuos",
-    languageSelector: "Seleccionar Idioma"
+    languageSelector: "Seleccionar Idioma",
+    analysisComplete: "Análisis Completo",
+    analysisCompleteDescription: "Aquí están sus instrucciones de clasificación",
+    analysisError: "Análisis Fallido",
+    analysisErrorDescription: "Ocurrió un error durante el análisis",
+    newAnalysis: "Iniciar Nuevo Análisis",
+    genericError: "Ocurrió un error inesperado. Por favor intente de nuevo."
   },
   fr: {
     title: "Assistant de Tri des Déchets",
@@ -366,6 +464,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "Télécharger Photo",
     uploadPhotoDescription: "Cliquez ici ou faites glisser une photo de vos déchets ici",
     analyzeButton: "🔍 Analyser Mes Déchets",
+    analyzing: "Analyse en cours...",
     validPostalCode: "Code postal valide",
     invalidPostalCode: "⚠️ Veuillez entrer un code postal allemand valide à 5 chiffres",
     whyImportant: "Pourquoi le tri correct des déchets est-il important?",
@@ -373,7 +472,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Réduction des déchets d'enfouissement et des émissions de CO2",
     reason3: "Conformité aux lois environnementales allemandes",
     reason4: "Économies de coûts dans l'élimination des déchets",
-    languageSelector: "Sélectionner la Langue"
+    languageSelector: "Sélectionner la Langue",
+    analysisComplete: "Analyse Terminée",
+    analysisCompleteDescription: "Voici vos instructions de tri",
+    analysisError: "Échec de l'Analyse",
+    analysisErrorDescription: "Une erreur s'est produite lors de l'analyse",
+    newAnalysis: "Commencer une Nouvelle Analyse",
+    genericError: "Une erreur inattendue s'est produite. Veuillez réessayer."
   },
   hi: {
     title: "कचरा छंटाई सहायक",
@@ -385,14 +490,21 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "फोटो अपलोड करें",
     uploadPhotoDescription: "यहाँ क्लिक करें या अपने कचरे की एक तस्वीर यहाँ खींचें",
     analyzeButton: "🔍 मेरे कचरे का विश्लेषण करें",
+    analyzing: "विश्लेषण कर रहे हैं...",
     validPostalCode: "वैध पोस्टल कोड",
-    invalidPostalCode: "⚠️ कृपया एक वैध 5-अंकीय जर्मन पोस्टल कोड दर्ज करें",
+    invalidPostalCode: "⚠️ कृपया एक वैध 5 अंकीय जर्मन पोस्टल कोड दर्ज करें",
     whyImportant: "उचित कचरा छंटाई क्यों महत्वपूर्ण है?",
     reason1: "पुनर्चक्रण और पुन: उपयोग के माध्यम से पर्यावरण संरक्षण",
     reason2: "लैंडफिल कचरे और CO2 उत्सर्जन में कमी",
     reason3: "जर्मन पर्यावरण कानूनों का अनुपालन",
     reason4: "कचरा निपटान में लागत बचत",
-    languageSelector: "भाषा का चयन करें"
+    languageSelector: "भाषा का चयन करें",
+    analysisComplete: "विश्लेषण पूर्ण",
+    analysisCompleteDescription: "यहाँ आपके छंटाई निर्देश हैं",
+    analysisError: "विश्लेषण असफल",
+    analysisErrorDescription: "विश्लेषण के दौरान एक त्रुटि हुई",
+    newAnalysis: "नया विश्लेषण शुरू करें",
+    genericError: "एक अप्रत्याशित त्रुटि हुई। कृपया पुनः प्रयास करें।"
   },
   ur: {
     title: "کچرا چھانٹنے کا مددگار",
@@ -404,6 +516,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "تصویر اپ لوڈ کریں",
     uploadPhotoDescription: "یہاں کلک کریں یا اپنے کچرے کی تصویر یہاں کھینچیں",
     analyzeButton: "🔍 میرے کچرے کا تجزیہ کریں",
+    analyzing: "تجزیہ کر رہے ہیں...",
     validPostalCode: "درست پوسٹل کوڈ",
     invalidPostalCode: "⚠️ براہ کرم ایک درست 5 ہندسوں کا جرمن پوسٹل کوڈ داخل کریں",
     whyImportant: "صحیح کچرا چھانٹنا کیوں اہم ہے؟",
@@ -411,7 +524,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "لینڈ فل کچرے اور CO2 اخراج میں کمی",
     reason3: "جرمن ماحولیاتی قوانین کی تعمیل",
     reason4: "کچرا ٹھکانے لگانے میں لاگت کی بچت",
-    languageSelector: "زبان منتخب کریں"
+    languageSelector: "زبان منتخب کریں",
+    analysisComplete: "تجزیہ مکمل",
+    analysisCompleteDescription: "یہاں آپ کی چھانٹنے کی ہدایات ہیں",
+    analysisError: "تجزیہ ناکام",
+    analysisErrorDescription: "تجزیے کے دوران ایک خرابی ہوئی",
+    newAnalysis: "نیا تجزیہ شروع کریں",
+    genericError: "ایک غیر متوقع خرابی ہوئی۔ براہ کرم دوبارہ کوشش کریں۔"
   },
   vi: {
     title: "Trợ Lý Phân Loại Rác",
@@ -423,6 +542,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "Tải Lên Ảnh",
     uploadPhotoDescription: "Nhấp vào đây hoặc kéo một bức ảnh về rác của bạn vào đây",
     analyzeButton: "🔍 Phân Tích Rác Của Tôi",
+    analyzing: "Đang phân tích...",
     validPostalCode: "Mã bưu điện hợp lệ",
     invalidPostalCode: "⚠️ Vui lòng nhập mã bưu điện Đức hợp lệ gồm 5 chữ số",
     whyImportant: "Tại sao phân loại rác đúng cách lại quan trọng?",
@@ -430,7 +550,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Giảm rác thải bãi rác và phát thải CO2",
     reason3: "Tuân thủ luật môi trường của Đức",
     reason4: "Tiết kiệm chi phí trong việc xử lý rác thải",
-    languageSelector: "Chọn Ngôn Ngữ"
+    languageSelector: "Chọn Ngôn Ngữ",
+    analysisComplete: "Phân Tích Hoàn Thành",
+    analysisCompleteDescription: "Đây là hướng dẫn phân loại của bạn",
+    analysisError: "Phân Tích Thất Bại",
+    analysisErrorDescription: "Đã xảy ra lỗi trong quá trình phân tích",
+    newAnalysis: "Bắt Đầu Phân Tích Mới",
+    genericError: "Đã xảy ra lỗi không mong muốn. Vui lòng thử lại."
   },
   zh: {
     title: "垃圾分类助手",
@@ -442,6 +568,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "上传照片",
     uploadPhotoDescription: "点击这里或将您垃圾的照片拖到这里",
     analyzeButton: "🔍 分析我的垃圾",
+    analyzing: "分析中...",
     validPostalCode: "有效邮政编码",
     invalidPostalCode: "⚠️ 请输入有效的5位德国邮政编码",
     whyImportant: "为什么正确的垃圾分类很重要？",
@@ -449,7 +576,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "减少垃圾填埋场废物和二氧化碳排放",
     reason3: "遵守德国环境法律",
     reason4: "节省废物处理成本",
-    languageSelector: "选择语言"
+    languageSelector: "选择语言",
+    analysisComplete: "分析完成",
+    analysisCompleteDescription: "这是您的分类说明",
+    analysisError: "分析失败",
+    analysisErrorDescription: "分析过程中发生错误",
+    newAnalysis: "开始新分析",
+    genericError: "发生意外错误。请重试。"
   },
   fa: {
     title: "دستیار تفکیک زباله",
@@ -461,6 +594,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "آپلود عکس",
     uploadPhotoDescription: "اینجا کلیک کنید یا عکس زباله‌هایتان را اینجا بکشید",
     analyzeButton: "🔍 تجزیه و تحلیل زباله‌های من",
+    analyzing: "در حال تجزیه و تحلیل...",
     validPostalCode: "کد پستی معتبر",
     invalidPostalCode: "⚠️ لطفاً یک کد پستی آلمانی معتبر 5 رقمی وارد کنید",
     whyImportant: "چرا تفکیک صحیح زباله مهم است؟",
@@ -468,7 +602,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "کاهش زباله‌های دفن و انتشار CO2",
     reason3: "رعایت قوانین زیست‌محیطی آلمان",
     reason4: "صرفه‌جویی در هزینه‌های دفع زباله",
-    languageSelector: "انتخاب زبان"
+    languageSelector: "انتخاب زبان",
+    analysisComplete: "تجزیه و تحلیل کامل شد",
+    analysisCompleteDescription: "اینجا دستورالعمل‌های تفکیک شما است",
+    analysisError: "تجزیه و تحلیل ناموفق",
+    analysisErrorDescription: "خطایی در طول تجزیه و تحلیل رخ داد",
+    newAnalysis: "شروع تجزیه و تحلیل جدید",
+    genericError: "خطای غیرمنتظره‌ای رخ داد. لطفاً دوباره تلاش کنید."
   },
   ps: {
     title: "د کثافاتو د جلا کولو مرستیال",
@@ -480,6 +620,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "انځور پورته کړئ",
     uploadPhotoDescription: "دلته کلیک وکړئ یا د خپلو کثافاتو انځور دلته راوکشئ",
     analyzeButton: "🔍 زموږ کثافات تحلیل کړئ",
+    analyzing: "تحلیل کوي...",
     validPostalCode: "سمه پوستي کوډ",
     invalidPostalCode: "⚠️ مهرباني وکړئ د آلمان سمه 5 شمیرې پوستي کوډ ولیکئ",
     whyImportant: "ولې د کثافاتو سمه جلا کول مهم دي؟",
@@ -487,7 +628,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "د ځمکې د ډکولو کثافاتو او د CO2 د خپرولو کمول",
     reason3: "د آلمان د چاپیریال د قوانینو تعقیبول",
     reason4: "د کثافاتو د لرې کولو په لګښتونو کې سپمول",
-    languageSelector: "ژبه وټاکئ"
+    languageSelector: "ژبه وټاکئ",
+    analysisComplete: "تحلیل بشپړ شو",
+    analysisCompleteDescription: "دلته ستاسو د جلا کولو لارښوونې دي",
+    analysisError: "تحلیل ناکام شو",
+    analysisErrorDescription: "د تحلیل پر مهال یوه ستونزه رامنځته شوه",
+    newAnalysis: "نوی تحلیل پیل کړئ",
+    genericError: "یوه غیر متوقعه ستونزه رامنځته شوه. مهرباني وکړئ بیا هڅه وکړئ."
   },
   ta: {
     title: "குப்பை வகைப்படுத்தும் உதவியாளர்",
@@ -499,6 +646,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "புகைப்படத்தை பதிவேற்றவும்",
     uploadPhotoDescription: "இங்கே கிளிக் செய்யவும் அல்லது உங்கள் குப்பையின் புகைப்படத்தை இங்கே இழுக்கவும்",
     analyzeButton: "🔍 என் குப்பையை பகுப்பாய்வு செய்யவும்",
+    analyzing: "பகுப்பாய்வு செய்கிறது...",
     validPostalCode: "செல்லுபடியாகும் அஞ்சல் குறியீடு",
     invalidPostalCode: "⚠️ தயவுசெய்து செல்லுபடியாகும் 5 இலக்க ஜெர்மன் அஞ்சல் குறியீட்டை உள்ளிடவும்",
     whyImportant: "சரியான குப்பை வகைப்படுத்துதல் ஏன் முக்கியம்?",
@@ -506,7 +654,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "நிலப்பரப்பு குப்பை மற்றும் CO2 உமிழ்வுகளை குறைத்தல்",
     reason3: "ஜெர்மன் சுற்றுச்சூழல் சட்டங்களுக்கு இணக்கம்",
     reason4: "குப்பை அகற்றலில் செலவு சேமிப்பு",
-    languageSelector: "மொழியைத் தேர்ந்தெடுக்கவும்"
+    languageSelector: "மொழியைத் தேர்ந்தெடுக்கவும்",
+    analysisComplete: "பகுப்பாய்வு முடிந்தது",
+    analysisCompleteDescription: "இங்கே உங்கள் வகைப்படுத்தும் வழிமுறைகள்",
+    analysisError: "பகுப்பாய்வு தோல்வியடைந்தது",
+    analysisErrorDescription: "பகுப்பாய்வின் போது பிழை ஏற்பட்டது",
+    newAnalysis: "புதிய பகுப்பாய்வைத் தொடங்கவும்",
+    genericError: "எதிர்பாராத பிழை ஏற்பட்டது. தயவுசெய்து மீண்டும் முயற்சிக்கவும்."
   },
   sq: {
     title: "Asistenti i Ndarjes së Mbeturinave",
@@ -518,6 +672,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "Ngarko Fotografinë",
     uploadPhotoDescription: "Kliko këtu ose zvarrit një fotografi të mbeturinave tuaja këtu",
     analyzeButton: "🔍 Analizo Mbeturinat e Mia",
+    analyzing: "Duke analizuar...",
     validPostalCode: "Kod postar i vlefshëm",
     invalidPostalCode: "⚠️ Ju lutemi vendosni një kod postar gjerman të vlefshëm me 5 shifra",
     whyImportant: "Pse është e rëndësishme ndarja e duhur e mbeturinave?",
@@ -525,7 +680,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Reduktimi i mbeturinave të groposjes dhe emetimeve të CO2",
     reason3: "Përputhja me ligjet mjedisore gjermane",
     reason4: "Kursimi i kostove në heqjen e mbeturinave",
-    languageSelector: "Zgjidh Gjuhën"
+    languageSelector: "Zgjidh Gjuhën",
+    analysisComplete: "Analiza u Përfundua",
+    analysisCompleteDescription: "Këtu janë udhëzimet tuaja të ndarjes",
+    analysisError: "Analiza Dështoi",
+    analysisErrorDescription: "Ndodhi një gabim gjatë analizës",
+    newAnalysis: "Fillo Analizë të Re",
+    genericError: "Ndodhi një gabim i papritur. Ju lutemi provoni përsëri."
   },
   da: {
     title: "Affaldssortering Assistent",
@@ -537,6 +698,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "Upload Billede",
     uploadPhotoDescription: "Klik her eller træk et billede af dit affald herhen",
     analyzeButton: "🔍 Analyser Mit Affald",
+    analyzing: "Analyserer...",
     validPostalCode: "Gyldigt postnummer",
     invalidPostalCode: "⚠️ Indtast venligst et gyldigt 5-cifret tysk postnummer",
     whyImportant: "Hvorfor er korrekt affaldssortering vigtig?",
@@ -544,7 +706,13 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Reduktion af lossepladsaffald og CO2-udledning",
     reason3: "Overholdelse af tyske miljølove",
     reason4: "Omkostningsbesparelser ved affaldsbortskaffelse",
-    languageSelector: "Vælg Sprog"
+    languageSelector: "Vælg Sprog",
+    analysisComplete: "Analyse Fuldført",
+    analysisCompleteDescription: "Her er dine sorteringsinstruktioner",
+    analysisError: "Analyse Mislykkedes",
+    analysisErrorDescription: "Der opstod en fejl under analysen",
+    newAnalysis: "Start Ny Analyse",
+    genericError: "Der opstod en uventet fejl. Prøv venligst igen."
   },
   uk: {
     title: "Помічник з Сортування Сміття",
@@ -556,6 +724,7 @@ const translations: Record<string, Record<string, string>> = {
     uploadPhoto: "Завантажити Фото",
     uploadPhotoDescription: "Натисніть тут або перетягніть фото вашого сміття сюди",
     analyzeButton: "🔍 Проаналізувати Моє Сміття",
+    analyzing: "Аналізуємо...",
     validPostalCode: "Дійсний поштовий індекс",
     invalidPostalCode: "⚠️ Будь ласка, введіть дійсний 5-значний німецький поштовий індекс",
     whyImportant: "Чому важливе правильне сортування сміття?",
@@ -563,6 +732,12 @@ const translations: Record<string, Record<string, string>> = {
     reason2: "Зменшення кількості сміттєзвалищ та викидів CO2",
     reason3: "Дотримання німецького екологічного законодавства",
     reason4: "Економія коштів на утилізації відходів",
-    languageSelector: "Оберіть Мову"
+    languageSelector: "Оберіть Мову",
+    analysisComplete: "Аналіз Завершено",
+    analysisCompleteDescription: "Ось ваші інструкції з сортування",
+    analysisError: "Помилка Аналізу",
+    analysisErrorDescription: "Сталася помилка під час аналізу",
+    newAnalysis: "Почати Новий Аналіз",
+    genericError: "Сталася неочікувана помилка. Будь ласка, спробуйте знову."
   }
 };

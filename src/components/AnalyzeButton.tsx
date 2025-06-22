@@ -7,9 +7,15 @@ interface AnalyzeButtonProps {
   postalCode: string;
   uploadedFile: File | null;
   onAnalyze: (token: string | null) => void;
+  isAnalyzing?: boolean;
 }
 
-const AnalyzeButton: React.FC<AnalyzeButtonProps> = ({ postalCode, uploadedFile, onAnalyze }) => {
+const AnalyzeButton: React.FC<AnalyzeButtonProps> = ({ 
+  postalCode, 
+  uploadedFile, 
+  onAnalyze, 
+  isAnalyzing = false 
+}) => {
   const { t } = useLanguage();
   const { executeRecaptcha } = useRecaptcha();
   const [isLoading, setIsLoading] = useState(false);
@@ -28,7 +34,6 @@ const AnalyzeButton: React.FC<AnalyzeButtonProps> = ({ postalCode, uploadedFile,
         onAnalyze(token);
       } else {
         console.warn('Failed to get reCAPTCHA token');
-        // You might want to show an error message to the user here
         onAnalyze(null);
       }
     } catch (error) {
@@ -39,7 +44,8 @@ const AnalyzeButton: React.FC<AnalyzeButtonProps> = ({ postalCode, uploadedFile,
     }
   };
 
-  const isDisabled = !postalCode || !uploadedFile || isLoading;
+  const isDisabled = !postalCode || !uploadedFile || isLoading || isAnalyzing;
+  const showLoading = isLoading || isAnalyzing;
 
   return (
     <div className="text-center pt-6">
@@ -61,7 +67,7 @@ const AnalyzeButton: React.FC<AnalyzeButtonProps> = ({ postalCode, uploadedFile,
         `}
       >
         <div className="flex items-center justify-center gap-3">
-          {isLoading ? (
+          {showLoading ? (
             <>
               <Loader2 className="w-5 h-5 animate-spin" />
               <span>{t('analyzing')}</span>
@@ -76,7 +82,7 @@ const AnalyzeButton: React.FC<AnalyzeButtonProps> = ({ postalCode, uploadedFile,
         </div>
         
         {/* Loading overlay */}
-        {isLoading && (
+        {showLoading && (
           <div className="absolute inset-0 bg-gradient-to-r from-green-600/20 to-emerald-600/20 animate-pulse" />
         )}
       </button>

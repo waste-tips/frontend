@@ -5,12 +5,21 @@ import PostalCodeInput from './components/PostalCodeInput';
 import FileUpload from './components/FileUpload';
 import AnalyzeButton from './components/AnalyzeButton';
 import InfoSection from './components/InfoSection';
+import ResultsSection from './components/ResultsSection';
 import { useLanguage } from './contexts/LanguageContext';
 
+interface AnalysisResult {
+  success: boolean;
+  html?: string;
+  error?: string;
+}
+
 const AppContent: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
   const [postalCode, setPostalCode] = useState('');
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
+  const [analysisResult, setAnalysisResult] = useState<AnalysisResult | null>(null);
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
 
   const handlePostalCodeChange = (code: string) => {
     setPostalCode(code);
@@ -20,23 +29,50 @@ const AppContent: React.FC = () => {
     setUploadedFile(file);
   };
 
-  const handleAnalyze = (recaptchaToken: string | null) => {
-    if (!recaptchaToken) {
-      console.error('No reCAPTCHA token received');
-      // Here you would show an error message to the user
+  const handleAnalyze = async (recaptchaToken: string | null) => {
+    if (!recaptchaToken || !uploadedFile || !postalCode) {
+      console.error('Missing required data for analysis');
       return;
     }
 
-    // Here you would send the data to your backend for analysis
-    console.log('Analyzing waste with:', {
-      postalCode,
-      fileName: uploadedFile?.name,
-      fileSize: uploadedFile?.size,
-      recaptchaToken: recaptchaToken.substring(0, 20) + '...'
-    });
+    setIsAnalyzing(true);
+    setAnalysisResult(null);
 
-    // TODO: Implement actual API call to your backend
-    // The backend should verify the reCAPTCHA token before processing
+    try {
+      const formData = new FormData();
+      formData.append('image', uploadedFile);
+      formData.append('postal_code', postalCode);
+      formData.append('recaptcha_code', recaptchaToken);
+      formData.append('language', currentLanguage);
+
+      const response = await fetch('https://backend-service-7lnemd56tq-ey.a.run.app', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const result: AnalysisResult = await response.json();
+      setAnalysisResult(result);
+
+      // Scroll to results section after a short delay
+      setTimeout(() => {
+        const resultsElement = document.getElementById('results-section');
+        if (resultsElement) {
+          resultsElement.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
+
+    } catch (error) {
+      console.error('Error analyzing waste:', error);
+      setAnalysisResult({
+        success: false,
+        error: 'Network error occurred. Please try again.'
+      });
+    } finally {
+      setIsAnalyzing(false);
+    }
   };
 
   return (
@@ -95,10 +131,23 @@ const AppContent: React.FC = () => {
               postalCode={postalCode}
               uploadedFile={uploadedFile}
               onAnalyze={handleAnalyze}
+              isAnalyzing={isAnalyzing}
             />
           </div>
         </div>
       </main>
+
+      {/* Results Section */}
+      {analysisResult && (
+        <ResultsSection 
+          result={analysisResult}
+          onNewAnalysis={() => {
+            setAnalysisResult(null);
+            setUploadedFile(null);
+            setPostalCode('');
+          }}
+        />
+      )}
 
       {/* Info Section */}
       <InfoSection />
