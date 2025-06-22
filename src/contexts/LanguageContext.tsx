@@ -114,7 +114,17 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "Analyse fehlgeschlagen",
     analysisErrorDescription: "Es ist ein Fehler aufgetreten",
     newAnalysis: "Neue Analyse starten",
-    genericError: "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+    genericError: "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+    // Location detection
+    detectLocation: "Standort ermitteln",
+    geolocationNotSupported: "Geolokalisierung wird von diesem Browser nicht unterstützt",
+    locationPermissionDenied: "Zugriff auf Standort wurde verweigert",
+    locationUnavailable: "Standort ist nicht verfügbar",
+    locationTimeout: "Zeitüberschreitung bei Standortermittlung",
+    locationError: "Fehler bei der Standortermittlung",
+    geocodingError: "Fehler beim Ermitteln der Postleitzahl",
+    noGermanPostalCodeFound: "Keine deutsche Postleitzahl für diesen Standort gefunden",
+    apiKeyRestrictionError: "API-Schlüssel-Beschränkungsfehler. Bitte kontaktieren Sie den Administrator."
   },
   en: {
     title: "Waste Sorting Helper",
@@ -140,33 +150,17 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "Analysis Failed",
     analysisErrorDescription: "An error occurred during analysis",
     newAnalysis: "Start New Analysis",
-    genericError: "An unexpected error occurred. Please try again."
-  },
-  tr: {
-    title: "Atık Ayırma Yardımcısı",
-    subtitle: "Almanya'da Doğru Atık Ayrımı",
-    description: "Posta kodunuzu girin ve atığınızın fotoğrafını yükleyin. Doğru şekilde ayırmanıza yardımcı olalım.",
-    postalCodeLabel: "📍 Posta Kodu",
-    postalCodePlaceholder: "10115",
-    uploadPhotoLabel: "📸 Fotoğraf Yükle",
-    uploadPhoto: "Fotoğraf Yükle",
-    uploadPhotoDescription: "Buraya tıklayın veya atığınızın fotoğrafını buraya sürükleyin",
-    analyzeButton: "🔍 Atığımı Analiz Et",
-    analyzing: "Analiz ediliyor...",
-    validPostalCode: "Geçerli posta kodu",
-    invalidPostalCode: "⚠️ Lütfen geçerli 5 haneli Alman posta kodu girin",
-    whyImportant: "Doğru atık ayırma neden önemli?",
-    reason1: "Geri dönüşüm ve yeniden kullanım yoluyla çevre koruma",
-    reason2: "Depolama alanı atığının ve CO2 emisyonlarının azaltılması",
-    reason3: "Alman çevre yasalarına uyum",
-    reason4: "Atık bertarafında maliyet tasarrufu",
-    languageSelector: "Dil Seç",
-    analysisComplete: "Analiz Tamamlandı",
-    analysisCompleteDescription: "İşte ayırma talimatlarınız",
-    analysisError: "Analiz Başarısız",
-    analysisErrorDescription: "Analiz sırasında bir hata oluştu",
-    newAnalysis: "Yeni Analiz Başlat",
-    genericError: "Beklenmeyen bir hata oluştu. Lütfen tekrar deneyin."
+    genericError: "An unexpected error occurred. Please try again.",
+    // Location detection
+    detectLocation: "Detect Location",
+    geolocationNotSupported: "Geolocation is not supported by this browser",
+    locationPermissionDenied: "Location access was denied",
+    locationUnavailable: "Location is unavailable",
+    locationTimeout: "Location detection timeout",
+    locationError: "Error detecting location",
+    geocodingError: "Error determining postal code",
+    noGermanPostalCodeFound: "No German postal code found for this location",
+    apiKeyRestrictionError: "API key restriction error. Please contact administrator."
   },
   ru: {
     title: "Помощник по сортировке мусора",
@@ -192,7 +186,53 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "Ошибка анализа",
     analysisErrorDescription: "Произошла ошибка во время анализа",
     newAnalysis: "Начать новый анализ",
-    genericError: "Произошла неожиданная ошибка. Пожалуйста, попробуйте снова."
+    genericError: "Произошла неожиданная ошибка. Пожалуйста, попробуйте снова.",
+    // Location detection
+    detectLocation: "Определить местоположение",
+    geolocationNotSupported: "Геолокация не поддерживается этим браузером",
+    locationPermissionDenied: "Доступ к местоположению был запрещен",
+    locationUnavailable: "Местоположение недоступно",
+    locationTimeout: "Тайм-аут определения местоположения",
+    locationError: "Ошибка определения местоположения",
+    geocodingError: "Ошибка определения почтового индекса",
+    noGermanPostalCodeFound: "Немецкий почтовый индекс для этого местоположения не найден",
+    apiKeyRestrictionError: "Ошибка ограничения API ключа. Обратитесь к администратору."
+  },
+  // ... (остальные языки с добавленными переводами для новых ключей)
+  tr: {
+    title: "Atık Ayırma Yardımcısı",
+    subtitle: "Almanya'da Doğru Atık Ayrımı",
+    description: "Posta kodunuzu girin ve atığınızın fotoğrafını yükleyin. Doğru şekilde ayırmanıza yardımcı olalım.",
+    postalCodeLabel: "📍 Posta Kodu",
+    postalCodePlaceholder: "10115",
+    uploadPhotoLabel: "📸 Fotoğraf Yükle",
+    uploadPhoto: "Fotoğraf Yükle",
+    uploadPhotoDescription: "Buraya tıklayın veya atığınızın fotoğrafını buraya sürükleyin",
+    analyzeButton: "🔍 Atığımı Analiz Et",
+    analyzing: "Analiz ediliyor...",
+    validPostalCode: "Geçerli posta kodu",
+    invalidPostalCode: "⚠️ Lütfen geçerli 5 haneli Alman posta kodu girin",
+    whyImportant: "Doğru atık ayırma neden önemli?",
+    reason1: "Geri dönüşüm ve yeniden kullanım yoluyla çevre koruma",
+    reason2: "Depolama alanı atığının ve CO2 emisyonlarının azaltılması",
+    reason3: "Alman çevre yasalarına uyum",
+    reason4: "Atık bertarafında maliyet tasarrufu",
+    languageSelector: "Dil Seç",
+    analysisComplete: "Analiz Tamamlandı",
+    analysisCompleteDescription: "İşte ayırma talimatlarınız",
+    analysisError: "Analiz Başarısız",
+    analysisErrorDescription: "Analiz sırasında bir hata oluştu",
+    newAnalysis: "Yeni Analiz Başlat",
+    genericError: "Beklenmeyen bir hata oluştu. Lütfen tekrar deneyin.",
+    detectLocation: "Konumu Tespit Et",
+    geolocationNotSupported: "Coğrafi konum bu tarayıcı tarafından desteklenmiyor",
+    locationPermissionDenied: "Konum erişimi reddedildi",
+    locationUnavailable: "Konum mevcut değil",
+    locationTimeout: "Konum tespiti zaman aşımı",
+    locationError: "Konum tespit hatası",
+    geocodingError: "Posta kodu belirleme hatası",
+    noGermanPostalCodeFound: "Bu konum için Alman posta kodu bulunamadı",
+    apiKeyRestrictionError: "API anahtarı kısıtlama hatası. Lütfen yöneticiyle iletişime geçin."
   },
   pl: {
     title: "Asystent Sortowania Odpadów",
@@ -218,7 +258,16 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "Błąd Analizy",
     analysisErrorDescription: "Wystąpił błąd podczas analizy",
     newAnalysis: "Rozpocznij Nową Analizę",
-    genericError: "Wystąpił nieoczekiwany błąd. Spróbuj ponownie."
+    genericError: "Wystąpił nieoczekiwany błąd. Spróbuj ponownie.",
+    detectLocation: "Wykryj Lokalizację",
+    geolocationNotSupported: "Geolokalizacja nie jest obsługiwana przez tę przeglądarkę",
+    locationPermissionDenied: "Dostęp do lokalizacji został odrzucony",
+    locationUnavailable: "Lokalizacja jest niedostępna",
+    locationTimeout: "Przekroczono czas wykrywania lokalizacji",
+    locationError: "Błąd wykrywania lokalizacji",
+    geocodingError: "Błąd określania kodu pocztowego",
+    noGermanPostalCodeFound: "Nie znaleziono niemieckiego kodu pocztowego dla tej lokalizacji",
+    apiKeyRestrictionError: "Błąd ograniczenia klucza API. Skontaktuj się z administratorem."
   },
   ar: {
     title: "مساعد فرز النفايات",
@@ -244,7 +293,16 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "فشل التحليل",
     analysisErrorDescription: "حدث خطأ أثناء التحليل",
     newAnalysis: "بدء تحليل جديد",
-    genericError: "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى."
+    genericError: "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى.",
+    detectLocation: "تحديد الموقع",
+    geolocationNotSupported: "تحديد الموقع الجغرافي غير مدعوم من هذا المتصفح",
+    locationPermissionDenied: "تم رفض الوصول إلى الموقع",
+    locationUnavailable: "الموقع غير متاح",
+    locationTimeout: "انتهت مهلة تحديد الموقع",
+    locationError: "خطأ في تحديد الموقع",
+    geocodingError: "خطأ في تحديد الرمز البريدي",
+    noGermanPostalCodeFound: "لم يتم العثور على رمز بريدي ألماني لهذا الموقع",
+    apiKeyRestrictionError: "خطأ في قيود مفتاح API. يرجى الاتصال بالمسؤول."
   },
   ku: {
     title: "Alîkarê Veqetandina Zibilê",
@@ -270,7 +328,16 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "Analîz Têk Çû",
     analysisErrorDescription: "Di dema analîzê de xeletî çêbû",
     newAnalysis: "Analîzek Nû Dest Pê Bike",
-    genericError: "Xeletîyek nenas çêbû. Ji kerema xwe dîsa biceribîne."
+    genericError: "Xeletîyek nenas çêbû. Ji kerema xwe dîsa biceribîne.",
+    detectLocation: "Cîh Diyar Bike",
+    geolocationNotSupported: "Diyarkirina cîhê ji aliyê vê gerokê ve nayê piştgirîkirin",
+    locationPermissionDenied: "Gihîştina cîhê hat redkirin",
+    locationUnavailable: "Cîh berdest nîne",
+    locationTimeout: "Dema diyarkirina cîhê qediya",
+    locationError: "Xeletî di diyarkirina cîhê de",
+    geocodingError: "Xeletî di diyarkirina koda postê de",
+    noGermanPostalCodeFound: "Ji bo vî cîhî koda postê ya Almanyayê nehat dîtin",
+    apiKeyRestrictionError: "Xeletîya sînorkirina mifteya API. Ji kerema xwe bi rêveberê re têkilî daynin."
   },
   it: {
     title: "Assistente per la Raccolta Differenziata",
@@ -296,7 +363,16 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "Analisi Fallita",
     analysisErrorDescription: "Si è verificato un errore durante l'analisi",
     newAnalysis: "Inizia Nuova Analisi",
-    genericError: "Si è verificato un errore imprevisto. Riprova."
+    genericError: "Si è verificato un errore imprevisto. Riprova.",
+    detectLocation: "Rileva Posizione",
+    geolocationNotSupported: "La geolocalizzazione non è supportata da questo browser",
+    locationPermissionDenied: "L'accesso alla posizione è stato negato",
+    locationUnavailable: "La posizione non è disponibile",
+    locationTimeout: "Timeout rilevamento posizione",
+    locationError: "Errore nel rilevamento della posizione",
+    geocodingError: "Errore nella determinazione del codice postale",
+    noGermanPostalCodeFound: "Nessun codice postale tedesco trovato per questa posizione",
+    apiKeyRestrictionError: "Errore di restrizione chiave API. Contatta l'amministratore."
   },
   bs: {
     title: "Asistent za Sortiranje Otpada",
@@ -322,7 +398,16 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "Analiza Neuspješna",
     analysisErrorDescription: "Došlo je do greške tokom analize",
     newAnalysis: "Počni Novu Analizu",
-    genericError: "Došlo je do neočekivane greške. Molimo pokušajte ponovo."
+    genericError: "Došlo je do neočekivane greške. Molimo pokušajte ponovo.",
+    detectLocation: "Odredi Lokaciju",
+    geolocationNotSupported: "Geolokacija nije podržana od strane ovog preglednika",
+    locationPermissionDenied: "Pristup lokaciji je odbačen",
+    locationUnavailable: "Lokacija nije dostupna",
+    locationTimeout: "Istek vremena za određivanje lokacije",
+    locationError: "Greška u određivanju lokacije",
+    geocodingError: "Greška u određivanju poštanskog broja",
+    noGermanPostalCodeFound: "Njemački poštanski broj nije pronađen za ovu lokaciju",
+    apiKeyRestrictionError: "Greška ograničenja API ključa. Molimo kontaktirajte administratora."
   },
   hr: {
     title: "Asistent za Sortiranje Otpada",
@@ -348,7 +433,16 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "Analiza Neuspješna",
     analysisErrorDescription: "Došlo je do greške tijekom analize",
     newAnalysis: "Počni Novu Analizu",
-    genericError: "Došlo je do neočekivane greške. Molimo pokušajte ponovo."
+    genericError: "Došlo je do neočekivane greške. Molimo pokušajte ponovo.",
+    detectLocation: "Odredi Lokaciju",
+    geolocationNotSupported: "Geolokacija nije podržana od strane ovog preglednika",
+    locationPermissionDenied: "Pristup lokaciji je odbačen",
+    locationUnavailable: "Lokacija nije dostupna",
+    locationTimeout: "Istek vremena za određivanje lokacije",
+    locationError: "Greška u određivanju lokacije",
+    geocodingError: "Greška u određivanju poštanskog broja",
+    noGermanPostalCodeFound: "Njemački poštanski broj nije pronađen za ovu lokaciju",
+    apiKeyRestrictionError: "Greška ograničenja API ključa. Molimo kontaktirajte administratora."
   },
   sr: {
     title: "Асистент за Сортирање Отпада",
@@ -374,7 +468,16 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "Анализа Неуспешна",
     analysisErrorDescription: "Дошло је до грешке током анализе",
     newAnalysis: "Почни Нову Анализу",
-    genericError: "Дошло је до неочекиване грешке. Молимо покушајте поново."
+    genericError: "Дошло је до неочекиване грешке. Молимо покушајте поново.",
+    detectLocation: "Одреди Локацију",
+    geolocationNotSupported: "Геолокација није подржана од стране овог прегледника",
+    locationPermissionDenied: "Приступ локацији је одбачен",
+    locationUnavailable: "Локација није доступна",
+    locationTimeout: "Истек времена за одређивање локације",
+    locationError: "Грешка у одређивању локације",
+    geocodingError: "Грешка у одређивању поштанског броја",
+    noGermanPostalCodeFound: "Немачки поштански број није пронађен за ову локацију",
+    apiKeyRestrictionError: "Грешка ограничења API кључа. Молимо контактирајте администратора."
   },
   ro: {
     title: "Asistent pentru Sortarea Deșeurilor",
@@ -400,7 +503,16 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "Analiza Eșuată",
     analysisErrorDescription: "A apărut o eroare în timpul analizei",
     newAnalysis: "Începeți Analiza Nouă",
-    genericError: "A apărut o eroare neașteptată. Vă rugăm să încercați din nou."
+    genericError: "A apărut o eroare neașteptată. Vă rugăm să încercați din nou.",
+    detectLocation: "Detectează Locația",
+    geolocationNotSupported: "Geolocația nu este suportată de acest browser",
+    locationPermissionDenied: "Accesul la locație a fost refuzat",
+    locationUnavailable: "Locația nu este disponibilă",
+    locationTimeout: "Timeout detectare locație",
+    locationError: "Eroare la detectarea locației",
+    geocodingError: "Eroare la determinarea codului poștal",
+    noGermanPostalCodeFound: "Nu s-a găsit cod poștal german pentru această locație",
+    apiKeyRestrictionError: "Eroare de restricție cheie API. Vă rugăm să contactați administratorul."
   },
   el: {
     title: "Βοηθός Διαχωρισμού Απορριμμάτων",
@@ -426,7 +538,16 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "Η Ανάλυση Απέτυχε",
     analysisErrorDescription: "Προέκυψε σφάλμα κατά την ανάλυση",
     newAnalysis: "Ξεκινήστε Νέα Ανάλυση",
-    genericError: "Προέκυψε απροσδόκητο σφάλμα. Παρακαλώ δοκιμάστε ξανά."
+    genericError: "Προέκυψε απροσδόκητο σφάλμα. Παρακαλώ δοκιμάστε ξανά.",
+    detectLocation: "Εντοπισμός Τοποθεσίας",
+    geolocationNotSupported: "Ο γεωεντοπισμός δεν υποστηρίζεται από αυτόν τον περιηγητή",
+    locationPermissionDenied: "Η πρόσβαση στην τοποθεσία απορρίφθηκε",
+    locationUnavailable: "Η τοποθεσία δεν είναι διαθέσιμη",
+    locationTimeout: "Λήξη χρόνου εντοπισμού τοποθεσίας",
+    locationError: "Σφάλμα εντοπισμού τοποθεσίας",
+    geocodingError: "Σφάλμα προσδιορισμού ταχυδρομικού κώδικα",
+    noGermanPostalCodeFound: "Δεν βρέθηκε γερμανικός ταχυδρομικός κώδικας για αυτήν την τοποθεσία",
+    apiKeyRestrictionError: "Σφάλμα περιορισμού κλειδιού API. Παρακαλώ επικοινωνήστε με τον διαχειριστή."
   },
   es: {
     title: "Asistente de Clasificación de Residuos",
@@ -452,7 +573,16 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "Análisis Fallido",
     analysisErrorDescription: "Ocurrió un error durante el análisis",
     newAnalysis: "Iniciar Nuevo Análisis",
-    genericError: "Ocurrió un error inesperado. Por favor intente de nuevo."
+    genericError: "Ocurrió un error inesperado. Por favor intente de nuevo.",
+    detectLocation: "Detectar Ubicación",
+    geolocationNotSupported: "La geolocalización no es compatible con este navegador",
+    locationPermissionDenied: "Se denegó el acceso a la ubicación",
+    locationUnavailable: "La ubicación no está disponible",
+    locationTimeout: "Tiempo de espera de detección de ubicación agotado",
+    locationError: "Error al detectar la ubicación",
+    geocodingError: "Error al determinar el código postal",
+    noGermanPostalCodeFound: "No se encontró código postal alemán para esta ubicación",
+    apiKeyRestrictionError: "Error de restricción de clave API. Por favor contacte al administrador."
   },
   fr: {
     title: "Assistant de Tri des Déchets",
@@ -478,7 +608,16 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "Échec de l'Analyse",
     analysisErrorDescription: "Une erreur s'est produite lors de l'analyse",
     newAnalysis: "Commencer une Nouvelle Analyse",
-    genericError: "Une erreur inattendue s'est produite. Veuillez réessayer."
+    genericError: "Une erreur inattendue s'est produite. Veuillez réessayer.",
+    detectLocation: "Détecter l'Emplacement",
+    geolocationNotSupported: "La géolocalisation n'est pas prise en charge par ce navigateur",
+    locationPermissionDenied: "L'accès à l'emplacement a été refusé",
+    locationUnavailable: "L'emplacement n'est pas disponible",
+    locationTimeout: "Délai d'attente de détection d'emplacement dépassé",
+    locationError: "Erreur de détection d'emplacement",
+    geocodingError: "Erreur de détermination du code postal",
+    noGermanPostalCodeFound: "Aucun code postal allemand trouvé pour cet emplacement",
+    apiKeyRestrictionError: "Erreur de restriction de clé API. Veuillez contacter l'administrateur."
   },
   hi: {
     title: "कचरा छंटाई सहायक",
@@ -504,7 +643,16 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "विश्लेषण असफल",
     analysisErrorDescription: "विश्लेषण के दौरान एक त्रुटि हुई",
     newAnalysis: "नया विश्लेषण शुरू करें",
-    genericError: "एक अप्रत्याशित त्रुटि हुई। कृपया पुनः प्रयास करें।"
+    genericError: "एक अप्रत्याशित त्रुटि हुई। कृपया पुनः प्रयास करें।",
+    detectLocation: "स्थान का पता लगाएं",
+    geolocationNotSupported: "इस ब्राउज़र द्वारा भौगोलिक स्थान समर्थित नहीं है",
+    locationPermissionDenied: "स्थान पहुंच से इनकार कर दिया गया",
+    locationUnavailable: "स्थान उपलब्ध नहीं है",
+    locationTimeout: "स्थान का पता लगाने का समय समाप्त",
+    locationError: "स्थान का पता लगाने में त्रुटि",
+    geocodingError: "पोस्टल कोड निर्धारित करने में त्रुटि",
+    noGermanPostalCodeFound: "इस स्थान के लिए कोई जर्मन पोस्टल कोड नहीं मिला",
+    apiKeyRestrictionError: "API कुंजी प्रतिबंध त्रुटि। कृपया व्यवस्थापक से संपर्क करें।"
   },
   ur: {
     title: "کچرا چھانٹنے کا مددگار",
@@ -530,7 +678,16 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "تجزیہ ناکام",
     analysisErrorDescription: "تجزیے کے دوران ایک خرابی ہوئی",
     newAnalysis: "نیا تجزیہ شروع کریں",
-    genericError: "ایک غیر متوقع خرابی ہوئی۔ براہ کرم دوبارہ کوشش کریں۔"
+    genericError: "ایک غیر متوقع خرابی ہوئی۔ براہ کرم دوبارہ کوشش کریں۔",
+    detectLocation: "مقام کا تعین کریں",
+    geolocationNotSupported: "اس براؤزر کے ذریعے جغرافیائی مقام کی حمایت نہیں کی جاتی",
+    locationPermissionDenied: "مقام تک رسائی سے انکار کر دیا گیا",
+    locationUnavailable: "مقام دستیاب نہیں ہے",
+    locationTimeout: "مقام کا تعین کرنے کا وقت ختم",
+    locationError: "مقام کا تعین کرنے میں خرابی",
+    geocodingError: "پوسٹل کوڈ کا تعین کرنے میں خرابی",
+    noGermanPostalCodeFound: "اس مقام کے لیے کوئی جرمن پوسٹل کوڈ نہیں ملا",
+    apiKeyRestrictionError: "API کلید پابندی کی خرابی۔ براہ کرم منتظم سے رابطہ کریں۔"
   },
   vi: {
     title: "Trợ Lý Phân Loại Rác",
@@ -556,7 +713,16 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "Phân Tích Thất Bại",
     analysisErrorDescription: "Đã xảy ra lỗi trong quá trình phân tích",
     newAnalysis: "Bắt Đầu Phân Tích Mới",
-    genericError: "Đã xảy ra lỗi không mong muốn. Vui lòng thử lại."
+    genericError: "Đã xảy ra lỗi không mong muốn. Vui lòng thử lại.",
+    detectLocation: "Phát Hiện Vị Trí",
+    geolocationNotSupported: "Định vị địa lý không được hỗ trợ bởi trình duyệt này",
+    locationPermissionDenied: "Quyền truy cập vị trí đã bị từ chối",
+    locationUnavailable: "Vị trí không khả dụng",
+    locationTimeout: "Hết thời gian phát hiện vị trí",
+    locationError: "Lỗi phát hiện vị trí",
+    geocodingError: "Lỗi xác định mã bưu điện",
+    noGermanPostalCodeFound: "Không tìm thấy mã bưu điện Đức cho vị trí này",
+    apiKeyRestrictionError: "Lỗi hạn chế khóa API. Vui lòng liên hệ quản trị viên."
   },
   zh: {
     title: "垃圾分类助手",
@@ -582,7 +748,16 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "分析失败",
     analysisErrorDescription: "分析过程中发生错误",
     newAnalysis: "开始新分析",
-    genericError: "发生意外错误。请重试。"
+    genericError: "发生意外错误。请重试。",
+    detectLocation: "检测位置",
+    geolocationNotSupported: "此浏览器不支持地理定位",
+    locationPermissionDenied: "位置访问被拒绝",
+    locationUnavailable: "位置不可用",
+    locationTimeout: "位置检测超时",
+    locationError: "位置检测错误",
+    geocodingError: "确定邮政编码时出错",
+    noGermanPostalCodeFound: "未找到此位置的德国邮政编码",
+    apiKeyRestrictionError: "API密钥限制错误。请联系管理员。"
   },
   fa: {
     title: "دستیار تفکیک زباله",
@@ -608,7 +783,16 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "تجزیه و تحلیل ناموفق",
     analysisErrorDescription: "خطایی در طول تجزیه و تحلیل رخ داد",
     newAnalysis: "شروع تجزیه و تحلیل جدید",
-    genericError: "خطای غیرمنتظره‌ای رخ داد. لطفاً دوباره تلاش کنید."
+    genericError: "خطای غیرمنتظره‌ای رخ داد. لطفاً دوباره تلاش کنید.",
+    detectLocation: "تشخیص موقعیت",
+    geolocationNotSupported: "موقعیت‌یابی جغرافیایی توسط این مرورگر پشتیبانی نمی‌شود",
+    locationPermissionDenied: "دسترسی به موقعیت رد شد",
+    locationUnavailable: "موقعیت در دسترس نیست",
+    locationTimeout: "زمان تشخیص موقعیت به پایان رسید",
+    locationError: "خطا در تشخیص موقعیت",
+    geocodingError: "خطا در تعیین کد پستی",
+    noGermanPostalCodeFound: "کد پستی آلمانی برای این موقعیت یافت نشد",
+    apiKeyRestrictionError: "خطای محدودیت کلید API. لطفاً با مدیر تماس بگیرید."
   },
   ps: {
     title: "د کثافاتو د جلا کولو مرستیال",
@@ -634,7 +818,16 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "تحلیل ناکام شو",
     analysisErrorDescription: "د تحلیل پر مهال یوه ستونزه رامنځته شوه",
     newAnalysis: "نوی تحلیل پیل کړئ",
-    genericError: "یوه غیر متوقعه ستونزه رامنځته شوه. مهرباني وکړئ بیا هڅه وکړئ."
+    genericError: "یوه غیر متوقعه ستونزه رامنځته شوه. مهرباني وکړئ بیا هڅه وکړئ.",
+    detectLocation: "ځای وپیژنئ",
+    geolocationNotSupported: "د ځای پیژندنه د دغه براوزر لخوا نه ملاتړ کیږي",
+    locationPermissionDenied: "د ځای ته لاسرسي رد شو",
+    locationUnavailable: "ځای شتون نلري",
+    locationTimeout: "د ځای پیژندنې وخت ختم شو",
+    locationError: "د ځای پیژندنې کې ستونزه",
+    geocodingError: "د پوستي کوډ ټاکلو کې ستونزه",
+    noGermanPostalCodeFound: "د دغه ځای لپاره د آلمان پوستي کوډ ونه موندل شو",
+    apiKeyRestrictionError: "د API کیلي محدودیت ستونزه. مهرباني وکړئ د اداري سره اړیکه ونیسئ."
   },
   ta: {
     title: "குப்பை வகைப்படுத்தும் உதவியாளர்",
@@ -660,7 +853,16 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "பகுப்பாய்வு தோல்வியடைந்தது",
     analysisErrorDescription: "பகுப்பாய்வின் போது பிழை ஏற்பட்டது",
     newAnalysis: "புதிய பகுப்பாய்வைத் தொடங்கவும்",
-    genericError: "எதிர்பாராத பிழை ஏற்பட்டது. தயவுசெய்து மீண்டும் முயற்சிக்கவும்."
+    genericError: "எதிர்பாராத பிழை ஏற்பட்டது. தயவுசெய்து மீண்டும் முயற்சிக்கவும்.",
+    detectLocation: "இருப்பிடத்தைக் கண்டறியவும்",
+    geolocationNotSupported: "இந்த உலாவியால் புவியிருப்பிடம் ஆதரிக்கப்படவில்லை",
+    locationPermissionDenied: "இருப்பிட அணுகல் மறுக்கப்பட்டது",
+    locationUnavailable: "இருப்பிடம் கிடைக்கவில்லை",
+    locationTimeout: "இருப்பிடக் கண்டறிதல் நேரம் முடிந்தது",
+    locationError: "இருப்பிடத்தைக் கண்டறிவதில் பிழை",
+    geocodingError: "அஞ்சல் குறியீட்டை தீர்மானிப்பதில் பிழை",
+    noGermanPostalCodeFound: "இந்த இருப்பிடத்திற்கு ஜெர்மன் அஞ்சல் குறியீடு கிடைக்கவில்லை",
+    apiKeyRestrictionError: "API விசை கட்டுப்பாடு பிழை. தயவுசெய்து நிர்வாகியைத் தொடர்பு கொள்ளவும்."
   },
   sq: {
     title: "Asistenti i Ndarjes së Mbeturinave",
@@ -686,7 +888,16 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "Analiza Dështoi",
     analysisErrorDescription: "Ndodhi një gabim gjatë analizës",
     newAnalysis: "Fillo Analizë të Re",
-    genericError: "Ndodhi një gabim i papritur. Ju lutemi provoni përsëri."
+    genericError: "Ndodhi një gabim i papritur. Ju lutemi provoni përsëri.",
+    detectLocation: "Zbulo Vendndodhjen",
+    geolocationNotSupported: "Gjeolokalizimi nuk mbështetet nga ky shfletues",
+    locationPermissionDenied: "Qasja në vendndodhje u refuzua",
+    locationUnavailable: "Vendndodhja nuk është e disponueshme",
+    locationTimeout: "Koha e zbulimit të vendndodhjes mbaroi",
+    locationError: "Gabim në zbulimin e vendndodhjes",
+    geocodingError: "Gabim në përcaktimin e kodit postar",
+    noGermanPostalCodeFound: "Nuk u gjet kod postar gjerman për këtë vendndodhje",
+    apiKeyRestrictionError: "Gabim kufizimi i çelësit API. Ju lutemi kontaktoni administratorin."
   },
   da: {
     title: "Affaldssortering Assistent",
@@ -712,7 +923,16 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "Analyse Mislykkedes",
     analysisErrorDescription: "Der opstod en fejl under analysen",
     newAnalysis: "Start Ny Analyse",
-    genericError: "Der opstod en uventet fejl. Prøv venligst igen."
+    genericError: "Der opstod en uventet fejl. Prøv venligst igen.",
+    detectLocation: "Registrer Placering",
+    geolocationNotSupported: "Geolokalisering understøttes ikke af denne browser",
+    locationPermissionDenied: "Adgang til placering blev nægtet",
+    locationUnavailable: "Placering er ikke tilgængelig",
+    locationTimeout: "Timeout for placeringsregistrering",
+    locationError: "Fejl ved registrering af placering",
+    geocodingError: "Fejl ved bestemmelse af postnummer",
+    noGermanPostalCodeFound: "Intet tysk postnummer fundet for denne placering",
+    apiKeyRestrictionError: "API-nøgle begrænsningsfejl. Kontakt venligst administratoren."
   },
   uk: {
     title: "Помічник з Сортування Сміття",
@@ -738,6 +958,15 @@ const translations: Record<string, Record<string, string>> = {
     analysisError: "Помилка Аналізу",
     analysisErrorDescription: "Сталася помилка під час аналізу",
     newAnalysis: "Почати Новий Аналіз",
-    genericError: "Сталася неочікувана помилка. Будь ласка, спробуйте знову."
+    genericError: "Сталася неочікувана помилка. Будь ласка, спробуйте знову.",
+    detectLocation: "Визначити Місцезнаходження",
+    geolocationNotSupported: "Геолокація не підтримується цим браузером",
+    locationPermissionDenied: "Доступ до місцезнаходження було відхилено",
+    locationUnavailable: "Місцезнаходження недоступне",
+    locationTimeout: "Час визначення місцезнаходження вичерпано",
+    locationError: "Помилка визначення місцезнаходження",
+    geocodingError: "Помилка визначення поштового індексу",
+    noGermanPostalCodeFound: "Німецький поштовий індекс для цього місцезнаходження не знайдено",
+    apiKeyRestrictionError: "Помилка обмеження API ключа. Будь ласка, зверніться до адміністратора."
   }
 };
