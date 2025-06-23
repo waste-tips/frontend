@@ -156,7 +156,15 @@ const AppContent: React.FC = () => {
       <footer className="bg-green-800 text-white py-8">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <p className="text-green-200">
-            © 2025 Waste Sorting Helper. Made with 💚 for a greener Germany.
+            Built with{' '}
+            <a 
+              href="https://bolt.new" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white hover:text-green-100 font-medium underline decoration-green-400 hover:decoration-green-300 transition-colors duration-200"
+            >
+              Bolt.new
+            </a>
           </p>
         </div>
       </footer>
