@@ -12,37 +12,62 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileSelect }) => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const dragCounterRef = useRef(0);
 
   const handleDragEnter = (e: React.DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    setIsDragActive(true);
+    dragCounterRef.current++;
+    
+    if (e.dataTransfer.items && e.dataTransfer.items.length > 0) {
+      setIsDragActive(true);
+    }
   };
 
   const handleDragLeave = (e: React.DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    setIsDragActive(false);
+    dragCounterRef.current--;
+    
+    if (dragCounterRef.current === 0) {
+      setIsDragActive(false);
+    }
   };
 
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    
+    // Set the dropEffect to show the correct cursor
+    if (e.dataTransfer) {
+      e.dataTransfer.dropEffect = 'copy';
+    }
   };
 
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
     setIsDragActive(false);
+    dragCounterRef.current = 0;
 
     const files = e.dataTransfer.files;
-    if (files && files[0]) {
-      handleFileSelection(files[0]);
+    if (files && files.length > 0) {
+      const file = files[0];
+      if (file.type.startsWith('image/')) {
+        handleFileSelection(file);
+      } else {
+        alert('Please select an image file (JPG, PNG, WEBP)');
+      }
     }
   };
 
   const handleFileSelection = (file: File) => {
     if (file.type.startsWith('image/')) {
+      // Clean up previous preview URL
+      if (previewUrl) {
+        URL.revokeObjectURL(previewUrl);
+      }
+      
       setSelectedFile(file);
       const url = URL.createObjectURL(file);
       setPreviewUrl(url);
@@ -68,6 +93,15 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileSelect }) => {
     }
   };
 
+  // Clean up preview URL on unmount
+  React.useEffect(() => {
+    return () => {
+      if (previewUrl) {
+        URL.revokeObjectURL(previewUrl);
+      }
+    };
+  }, [previewUrl]);
+
   return (
     <div className="w-full">
       <input
@@ -89,7 +123,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileSelect }) => {
             relative border-2 border-dashed rounded-2xl p-12 text-center cursor-pointer
             transition-all duration-300 ease-in-out
             ${isDragActive
-              ? 'border-green-400 bg-green-50 scale-[1.02]'
+              ? 'border-green-400 bg-green-50 scale-[1.02] shadow-lg'
               : 'border-green-300 bg-green-25 hover:border-green-400 hover:bg-green-50 hover:scale-[1.01]'
             }
           `}
@@ -121,9 +155,9 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileSelect }) => {
           </div>
 
           {isDragActive && (
-            <div className="absolute inset-0 bg-green-100/50 rounded-2xl flex items-center justify-center">
-              <div className="text-green-700 font-medium">
-                Drop your photo here
+            <div className="absolute inset-0 bg-green-100/50 rounded-2xl flex items-center justify-center pointer-events-none">
+              <div className="text-green-700 font-medium text-lg">
+                {t('dropPhotoHere') || 'Drop your photo here'}
               </div>
             </div>
           )}
@@ -133,6 +167,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileSelect }) => {
           <button
             onClick={clearSelection}
             className="absolute top-4 right-4 p-2 bg-red-100 hover:bg-red-200 text-red-600 rounded-full transition-colors z-10"
+            title="Remove photo"
           >
             <X className="w-4 h-4" />
           </button>
